@@ -7,19 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E67AE634243722CD0066381F /* CheckListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67AE633243722CD0066381F /* CheckListItem.swift */; };
+		E67AE636243750070066381F /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67AE635243750070066381F /* TodoList.swift */; };
 		E6D796BE2436267100E90883 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D796BD2436267100E90883 /* AppDelegate.swift */; };
 		E6D796C02436267100E90883 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D796BF2436267100E90883 /* SceneDelegate.swift */; };
-		E6D796C22436267100E90883 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D796C12436267100E90883 /* ViewController.swift */; };
+		E6D796C22436267100E90883 /* ChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D796C12436267100E90883 /* ChecklistViewController.swift */; };
 		E6D796C52436267100E90883 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6D796C32436267100E90883 /* Main.storyboard */; };
 		E6D796C72436267400E90883 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6D796C62436267400E90883 /* Assets.xcassets */; };
 		E6D796CA2436267400E90883 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6D796C82436267400E90883 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E67AE633243722CD0066381F /* CheckListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListItem.swift; sourceTree = "<group>"; };
+		E67AE635243750070066381F /* TodoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
 		E6D796BA2436267100E90883 /* Checklist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checklist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6D796BD2436267100E90883 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6D796BF2436267100E90883 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E6D796C12436267100E90883 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E6D796C12436267100E90883 /* ChecklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistViewController.swift; sourceTree = "<group>"; };
 		E6D796C42436267100E90883 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E6D796C62436267400E90883 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6D796C92436267400E90883 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,11 +62,13 @@
 			children = (
 				E6D796BD2436267100E90883 /* AppDelegate.swift */,
 				E6D796BF2436267100E90883 /* SceneDelegate.swift */,
-				E6D796C12436267100E90883 /* ViewController.swift */,
+				E6D796C12436267100E90883 /* ChecklistViewController.swift */,
 				E6D796C32436267100E90883 /* Main.storyboard */,
 				E6D796C62436267400E90883 /* Assets.xcassets */,
 				E6D796C82436267400E90883 /* LaunchScreen.storyboard */,
 				E6D796CB2436267400E90883 /* Info.plist */,
+				E67AE633243722CD0066381F /* CheckListItem.swift */,
+				E67AE635243750070066381F /* TodoList.swift */,
 			);
 			path = Checklist;
 			sourceTree = "<group>";
@@ -138,9 +144,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6D796C22436267100E90883 /* ViewController.swift in Sources */,
+				E67AE636243750070066381F /* TodoList.swift in Sources */,
+				E6D796C22436267100E90883 /* ChecklistViewController.swift in Sources */,
 				E6D796BE2436267100E90883 /* AppDelegate.swift in Sources */,
 				E6D796C02436267100E90883 /* SceneDelegate.swift in Sources */,
+				E67AE634243722CD0066381F /* CheckListItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
