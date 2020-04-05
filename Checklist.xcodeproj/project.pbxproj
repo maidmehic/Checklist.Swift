@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E6200E762437A5C600CA1119 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6200E752437A5C600CA1119 /* AddItemViewController.swift */; };
 		E67AE634243722CD0066381F /* CheckListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67AE633243722CD0066381F /* CheckListItem.swift */; };
 		E67AE636243750070066381F /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67AE635243750070066381F /* TodoList.swift */; };
 		E6D796BE2436267100E90883 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D796BD2436267100E90883 /* AppDelegate.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E6200E752437A5C600CA1119 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		E67AE633243722CD0066381F /* CheckListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListItem.swift; sourceTree = "<group>"; };
 		E67AE635243750070066381F /* TodoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
 		E6D796BA2436267100E90883 /* Checklist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checklist.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +71,7 @@
 				E6D796CB2436267400E90883 /* Info.plist */,
 				E67AE633243722CD0066381F /* CheckListItem.swift */,
 				E67AE635243750070066381F /* TodoList.swift */,
+				E6200E752437A5C600CA1119 /* AddItemViewController.swift */,
 			);
 			path = Checklist;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 				E6D796BE2436267100E90883 /* AppDelegate.swift in Sources */,
 				E6D796C02436267100E90883 /* SceneDelegate.swift in Sources */,
 				E67AE634243722CD0066381F /* CheckListItem.swift in Sources */,
+				E6200E762437A5C600CA1119 /* AddItemViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

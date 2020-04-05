@@ -30,4 +30,20 @@ class TodoList{
         todos.append(row3Item)
         todos.append(row4Item)
     }
+    
+    func addNewTodo (_ item: CheckListItem) -> CheckListItem{
+        todos.append(item)
+        return item
+    }
+    
+    func removeTodo(index: Int){
+        todos.remove(at: index)
+    }
+    
+    private func getRandomTitle () -> String {
+        var titles = ["New todo item", "Generic todo", "Fill me out", "I need something to do", "Much todo about nothing"]
+        
+        let randomNumber = Int.random(in: 0...titles.count - 1)
+        return titles[randomNumber]
+    }
 }
