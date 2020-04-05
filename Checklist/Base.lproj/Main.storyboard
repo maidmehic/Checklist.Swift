@@ -15,15 +15,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" tag="1000" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="ChecklistItem" id="2dY-oy-tfQ">
+                            <tableViewCell clipsSubviews="YES" tag="1000" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="ChecklistItem" id="2dY-oy-tfQ">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2dY-oy-tfQ" id="W32-tM-MBz">
-                                    <rect key="frame" x="0.0" y="0.0" width="370" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="351" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="5000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7OB-fe-h6X">
-                                            <rect key="frame" x="20" y="11" width="330" height="21.5"/>
+                                            <rect key="frame" x="20" y="11" width="311" height="21.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -36,6 +36,9 @@
                                         <constraint firstItem="7OB-fe-h6X" firstAttribute="leading" secondItem="W32-tM-MBz" secondAttribute="leading" constant="20" symbolic="YES" id="r3O-30-cjt"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="UrV-LA-W7C" kind="show" identifier="EditItemSegue" trigger="accessoryAction" id="LFZ-PI-phz"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -56,7 +59,7 @@
             </objects>
             <point key="canvasLocation" x="802.89855072463774" y="39.508928571428569"/>
         </scene>
-        <!--Add Checklist-->
+        <!--Add Item-->
         <scene sceneID="79s-xb-lBl">
             <objects>
                 <tableViewController id="UrV-LA-W7C" customClass="AddItemViewController" customModule="Checklist" customModuleProvider="target" sceneMemberID="viewController">
@@ -94,13 +97,13 @@
                             <outlet property="delegate" destination="UrV-LA-W7C" id="Lp2-py-jse"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Add Checklist" id="N3Z-fd-U33">
+                    <navigationItem key="navigationItem" title="Add Item" id="N3Z-fd-U33">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="f56-Bp-aK5">
                             <connections>
                                 <action selector="cancel" destination="UrV-LA-W7C" id="fwg-4I-ZOr"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="RC5-zN-vFT">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="RC5-zN-vFT">
                             <connections>
                                 <action selector="add" destination="UrV-LA-W7C" id="8li-Ik-YJH"/>
                             </connections>
@@ -135,4 +138,7 @@
             <point key="canvasLocation" x="-107.24637681159422" y="39.508928571428569"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="bAI-8R-9EJ"/>
+    </inferredMetricsTieBreakers>
 </document>
