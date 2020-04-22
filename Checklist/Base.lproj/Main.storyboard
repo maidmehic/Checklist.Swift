@@ -16,14 +16,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" tag="1000" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="ChecklistItem" id="2dY-oy-tfQ" customClass="CheckListItemTableViewCell" customModule="Checklist" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2dY-oy-tfQ" id="W32-tM-MBz">
-                                    <rect key="frame" x="0.0" y="0.0" width="351" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="351" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="5000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7OB-fe-h6X">
-                                            <rect key="frame" x="20" y="11" width="311" height="21.5"/>
+                                            <rect key="frame" x="20" y="11" width="311" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -48,13 +48,23 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Checklists" id="t3j-x0-NvU">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="Mjp-bg-bpU">
-                            <connections>
-                                <segue destination="UrV-LA-W7C" kind="show" identifier="AddItemSegue" id="bAI-8R-9EJ"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem style="done" systemItem="add" id="Mjp-bg-bpU">
+                                <connections>
+                                    <segue destination="UrV-LA-W7C" kind="show" identifier="AddItemSegue" id="bAI-8R-9EJ"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Delete" id="edh-0W-pv4">
+                                <connections>
+                                    <action selector="deleteMultipleItems" destination="19M-5U-sI1" id="ld7-Gn-IoD"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="deleteBarButton" destination="edh-0W-pv4" id="DYH-0W-ZfR"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="piD-Ew-D4e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

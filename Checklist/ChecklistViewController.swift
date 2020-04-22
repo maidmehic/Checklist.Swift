@@ -11,6 +11,7 @@ import UIKit
 class ChecklistViewController: UITableViewController {
     
     var todoList: TodoList
+    @IBOutlet weak var deleteBarButton: UIBarButtonItem!
     
     required init?(coder: NSCoder) {
         
@@ -24,6 +25,20 @@ class ChecklistViewController: UITableViewController {
         
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.leftBarButtonItem = editButtonItem //edit button by table view controller
+        
+        tableView.allowsMultipleSelectionDuringEditing = true; //show select buttons when editing
+        
+        manageDeleteBarButton(isEditingTableView: false, hasSelectedItems: false)
+    }
+    
+    @IBAction func deleteMultipleItems(){
+        if let selectedRowsIndexPaths = tableView.indexPathsForSelectedRows{
+            todoList.removeMultiple(indexPaths: selectedRowsIndexPaths)
+            
+            tableView.beginUpdates() //begin series of updates
+            tableView.deleteRows(at: selectedRowsIndexPaths, with: .automatic)
+            tableView.endUpdates()
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {//return number of rows
@@ -42,16 +57,31 @@ class ChecklistViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {//handle row selection
-        if let cell = tableView.cellForRow(at: indexPath){
-            let item = todoList.todos[indexPath.row]
-            configureLineThrough(for: cell, with: item, rowSelected: true)
-            tableView.deselectRow(at: indexPath, animated: true)//ripple effect
+        if(!tableView.isEditing){
+            if let cell = tableView.cellForRow(at: indexPath){
+                let item = todoList.todos[indexPath.row]
+                configureLineThrough(for: cell, with: item, rowSelected: true)
+                tableView.deselectRow(at: indexPath, animated: true)//ripple effect
+            }
+        } else {
+            if tableView.indexPathsForSelectedRows != nil {
+                manageDeleteBarButton(isEditingTableView: true, hasSelectedItems: true)
+            } else {
+                manageDeleteBarButton(isEditingTableView: true, hasSelectedItems: false)
+            }
+            
         }
     }
     
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: true)
         tableView.setEditing(tableView.isEditing, animated: true)
+        
+        if tableView.indexPathsForSelectedRows != nil {
+            manageDeleteBarButton(isEditingTableView: tableView.isEditing, hasSelectedItems: true)
+        }else{
+            manageDeleteBarButton(isEditingTableView: tableView.isEditing, hasSelectedItems: false)
+        }
     }
     
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) { //handle reorder
@@ -91,6 +121,16 @@ class ChecklistViewController: UITableViewController {
         attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: lineThroughValue, range: NSMakeRange(0, attributeString.length))
         
         label.attributedText = attributeString
+    }
+    
+    func manageDeleteBarButton(isEditingTableView: Bool, hasSelectedItems: Bool){
+        if isEditingTableView && hasSelectedItems{
+            deleteBarButton.title = "Delete"
+            deleteBarButton.isEnabled = true;
+        } else {
+            deleteBarButton.title = ""
+            deleteBarButton.isEnabled = false;
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {// become a delegate of AddItemViewController

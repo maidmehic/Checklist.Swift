@@ -48,4 +48,20 @@ class TodoList{
         todos.remove(at: from)
         todos.insert(item, at: to)
     }
+    
+    func removeMultiple (indexPaths: [IndexPath]){
+        var itemsToRemove = [CheckListItem]()
+        
+        for indexPath in indexPaths{
+            if let item = todos[indexPath.row] as CheckListItem?{
+                itemsToRemove.append(item)
+            }
+        }
+        
+        for itemToRemove in itemsToRemove{
+            if let index = todos.firstIndex(of: itemToRemove){
+                removeTodo(index: index)
+            }
+        }
+    }
 }
