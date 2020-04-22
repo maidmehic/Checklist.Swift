@@ -39,4 +39,13 @@ class TodoList{
     func removeTodo(index: Int){
         todos.remove(at: index)
     }
+    
+    func moveItemInArray(from: Int, to: Int){// used when reordering
+        guard let item = todos[from] as CheckListItem? else{
+                return
+        }
+        
+        todos.remove(at: from)
+        todos.insert(item, at: to)
+    }
 }

@@ -16,6 +16,7 @@
 		E6D796C52436267100E90883 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6D796C32436267100E90883 /* Main.storyboard */; };
 		E6D796C72436267400E90883 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6D796C62436267400E90883 /* Assets.xcassets */; };
 		E6D796CA2436267400E90883 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6D796C82436267400E90883 /* LaunchScreen.storyboard */; };
+		E6E36778245050FA0003C8BD /* CheckListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E36777245050FA0003C8BD /* CheckListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		E6D796C62436267400E90883 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6D796C92436267400E90883 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E6D796CB2436267400E90883 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6E36777245050FA0003C8BD /* CheckListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				E67AE633243722CD0066381F /* CheckListItem.swift */,
 				E67AE635243750070066381F /* TodoList.swift */,
 				E6200E752437A5C600CA1119 /* AddItemViewController.swift */,
+				E6E36777245050FA0003C8BD /* CheckListTableViewCell.swift */,
 			);
 			path = Checklist;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6E36778245050FA0003C8BD /* CheckListTableViewCell.swift in Sources */,
 				E67AE636243750070066381F /* TodoList.swift in Sources */,
 				E6D796C22436267100E90883 /* ChecklistViewController.swift in Sources */,
 				E6D796BE2436267100E90883 /* AppDelegate.swift in Sources */,

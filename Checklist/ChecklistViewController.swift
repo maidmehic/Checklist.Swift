@@ -23,6 +23,7 @@ class ChecklistViewController: UITableViewController {
         super.viewDidLoad()
         
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.leftBarButtonItem = editButtonItem //edit button by table view controller
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {//return number of rows
@@ -48,6 +49,16 @@ class ChecklistViewController: UITableViewController {
         }
     }
     
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: true)
+        tableView.setEditing(tableView.isEditing, animated: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) { //handle reorder
+        
+        todoList.moveItemInArray(from: sourceIndexPath.row, to: destinationIndexPath.row)
+    }
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) { //handle row deletion
         
         todoList.removeTodo(index: indexPath.row)
@@ -56,8 +67,8 @@ class ChecklistViewController: UITableViewController {
     }
     
     func configureText(for cell: UITableViewCell, with item: CheckListItem){
-        if let label = cell.viewWithTag(5000) as? UILabel{
-            label.text = item.text
+        if let checkListItemCell = cell as? CheckListItemTableViewCell{
+            checkListItemCell.checkItemLabel.text = item.text
         }
     }
     
@@ -66,11 +77,11 @@ class ChecklistViewController: UITableViewController {
             item.toggleCheck()
         }
         
-        if let label = cell.viewWithTag(5000) as? UILabel{
+        if let checkListItemCell = cell as? CheckListItemTableViewCell{
             if item.checked{
-                manageLineThrough(label, 2)
+                manageLineThrough(checkListItemCell.checkItemLabel, 2)
             }else{
-                manageLineThrough(label, 0)
+                manageLineThrough(checkListItemCell.checkItemLabel, 0)
             }
         }
     }

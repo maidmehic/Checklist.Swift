@@ -33,9 +33,11 @@ class AddItemViewController: UITableViewController {
             doneBarButton.isEnabled = true
             textField.text = itemToEdit?.text
             navigationItem.title = "Edit Item"
+            doneBarButton.title = "Edit"
         }else{
             doneBarButton.isEnabled = false
             navigationItem.title = "Add Item"
+            doneBarButton.title = "Add"
         }
     }
     
