@@ -55,8 +55,12 @@ class AddItemViewController: UITableViewController {
         
         if let item = itemToEdit,
             let text = textField.text{
-            item.text = text
-            delegate?.addItemViewController(self, didFinishEditing: item)
+                let tempTodo = CheckListItem()
+                tempTodo.text = text
+                tempTodo.checked = item.checked
+            
+                DBManager.instance.updateToDo(item: item, updated: tempTodo)
+                delegate?.addItemViewController(self, didFinishEditing: item)
         }
         else{
             let item = CheckListItem()

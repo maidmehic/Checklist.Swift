@@ -25,9 +25,7 @@ class ChecklistViewController: UITableViewController {
         
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.leftBarButtonItem = editButtonItem //edit button by table view controller
-        
         tableView.allowsMultipleSelectionDuringEditing = true; //show select buttons when editing
-        
         manageDeleteBarButton(isEditingTableView: false, hasSelectedItems: false)
     }
     
@@ -104,7 +102,11 @@ class ChecklistViewController: UITableViewController {
     
     func configureLineThrough(for cell: UITableViewCell, with item: CheckListItem, rowSelected: Bool = false){
         if rowSelected {
-            item.toggleCheck()
+            let tempItem = CheckListItem()
+            tempItem.text = item.text
+            tempItem.checked = !item.checked
+            
+            DBManager.instance.updateToDo(item: item, updated: tempItem)
         }
         
         if let checkListItemCell = cell as? CheckListItemTableViewCell{
